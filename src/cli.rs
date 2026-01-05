@@ -12,11 +12,13 @@ pub struct Cli {
 pub enum Commands {
 
     #[command(arg_required_else_help = true)]
+    #[command(about = "Create new TODO list")]
     Create {
         todo_name: String
     },
 
     #[command(arg_required_else_help = true)]
+    #[command(about = "Add task to TODO list")]
     Add {
         todo_name: String,
 
@@ -27,6 +29,7 @@ pub enum Commands {
     },
 
     #[command(arg_required_else_help = true)]
+    #[command(about = "Complete task in TODO list")]
     Complete {
         todo_name: String,
 
@@ -35,6 +38,7 @@ pub enum Commands {
     },
 
     #[command(arg_required_else_help = true)]
+    #[command(about = "Remove TODO list or task")]
     Remove {
         todo_name: String,
 
@@ -42,6 +46,8 @@ pub enum Commands {
         task_name: Option<String>,
     },
 
+    #[command(arg_required_else_help = true)]
+    #[command(about = "Show all TODO list or task")]
     List {
         todo_name: String,
 
